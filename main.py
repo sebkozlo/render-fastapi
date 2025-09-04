@@ -30,7 +30,7 @@ class TextPayload(BaseModel):
 async def check_ai_content(payload: TextPayload):
     # zapytanie do modelu
     completion = client.chat.completions.create(
-        model="gpt-4o-mini",  # możesz użyć "gpt-4o" jeśli chcesz większą dokładność
+        model="gpt-5-nano",  # możesz użyć "gpt-4o" jeśli chcesz większą dokładność
         messages=[
             {"role": "system", "content": "Oszacuj w ilu procentach podany tekst został wygenerowany przez AI. Odpowiadaj tylko jedną liczbą całkowitą od 0 do 100 bez żadnego opisu."},
             {"role": "user", "content": payload.content},
